@@ -6,7 +6,7 @@ import Card from "./Card";
 
 const Expenses = (_props) => {
   const expenses = _props.expenses.map( e => {
-    return <ExpenseItem title={e.title} amount={e.amount} date={e.date}/>
+    return <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date}/>
   })
   return (
     <Card className="expenses">
