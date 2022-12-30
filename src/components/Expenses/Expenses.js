@@ -12,9 +12,14 @@ const Expenses = (_props) => {
     setFilteredYear(selectedYear);
   };
 
-  const expenses = _props.expenses.map((e) => {
+  const expensesList = _props.expenses.map((expense) => {
     return (
-      <ExpenseItem key={e.id} title={e.title} amount={e.amount} date={e.date} />
+      <ExpenseItem
+        key={expense.id}
+        title={expense.title}
+        amount={expense.amount}
+        date={expense.date}
+      />
     );
   });
 
@@ -24,7 +29,7 @@ const Expenses = (_props) => {
         onYearSelection={yearSelectionHandler}
         selectedYear={filteredYear}
       />
-      {expenses}
+      {expensesList}
     </Card>
   );
 };
